@@ -7,9 +7,9 @@ interface Props {
 const Theme: React.FC<Props> = (props) => {
   const { children } = { ...props };
   return (
-    <div>
+    <main>
       { children }
-    </div>
+    </main>
   );
 };
 

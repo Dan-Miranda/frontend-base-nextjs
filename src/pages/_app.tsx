@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import Theme from '../bootstrap/Theme';
+import '../bootstrap/Theme/globals.scss';
 
 function MyApp(props: AppProps) {
   const { Component, pageProps } = { ...props };
