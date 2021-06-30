@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Home from '../components/templates/Home';
+import HomeTemplate from '../components/templates/HomeTemplate';
 
 const HomePage = () => {
   return (
@@ -8,7 +8,7 @@ const HomePage = () => {
       <Head>
         <title>Base Front NextJS</title>
       </Head>
-      <Home />
+      <HomeTemplate />
     </>
   );
 }
