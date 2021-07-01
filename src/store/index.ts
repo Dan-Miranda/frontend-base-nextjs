@@ -1,21 +1,17 @@
 import { createWrapper } from 'next-redux-wrapper';
-import {
-  applyMiddleware, CombinedState, createStore, Reducer, Store,
-} from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunkMiddleware from 'redux-thunk';
-import rootReducer, { ApplicationState } from './rootReducer';
+import { combineReducers, createStore } from 'redux';
+import { devToolsEnhancer } from 'redux-devtools-extension';
+import exampleRedux from './exampleRedux';
 
-// const middlewares = [thunkMiddleware];
+const reducers = combineReducers({
+  example: exampleRedux,
+});
 
-const makeStore = () => {
-  const store: Store<Reducer<CombinedState<ApplicationState>>> = createStore(
-    rootReducer,
-    // composeWithDevTools(applyMiddleware(...middlewares)),
-    composeWithDevTools(),
-  );
-  return store;
-};
+const makeStore = () => createStore(
+  reducers,
+  undefined,
+  devToolsEnhancer({ trace: true }),
+);
 
 const storeWrapper = createWrapper(makeStore);
 

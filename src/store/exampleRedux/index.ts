@@ -1,6 +1,5 @@
 import { HYDRATE } from 'next-redux-wrapper';
-import { Reducer } from 'redux';
-import { ExampleReduxActionsTypes, ExampleReduxState } from './types';
+import { ExampleReduxActionsTypes, ExampleReduxState } from './actionTypes';
 
 const initialState: ExampleReduxState = {
   data: [],
@@ -9,7 +8,6 @@ const initialState: ExampleReduxState = {
 };
 
 const ExampleReduxReducer = (state = initialState, action) => {
-  console.log(action.type);
   switch (action.type) {
     case HYDRATE:
       return {

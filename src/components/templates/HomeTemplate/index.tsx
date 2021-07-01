@@ -1,18 +1,13 @@
+import React from 'react';
 import { useRouter } from 'next/dist/client/router';
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import storeWrapper from '../../../store';
+import { useDispatch } from 'react-redux';
 import { insertExample } from '../../../store/exampleRedux/actions';
-import { ApplicationState } from '../../../store/rootReducer';
 
 import styles from './HomeTemplate.module.scss';
 
 const HomeTemplate: React.FC = () => {
-  const [state, setState] = useState();
   const router = useRouter();
   const dispatch = useDispatch();
-
-  const exampleState = useSelector((state: ApplicationState) => state.example);
   const pegarReducer = () => {
     dispatch(insertExample({
       data: [{
@@ -22,8 +17,7 @@ const HomeTemplate: React.FC = () => {
       error: false,
       loading: false,
     }));
-    // router.push('/teste');
-    console.log(exampleState);
+    router.push('/teste');
   };
 
   return (

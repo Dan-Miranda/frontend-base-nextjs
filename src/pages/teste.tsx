@@ -6,10 +6,9 @@ import { ApplicationState } from '../store/rootReducer';
 
 const Teste: React.FC = () => {
   const exampleState = useSelector((state: ApplicationState) => state.example);
-  console.log(exampleState);
   return (
     <div>
-      <h1>AOBA</h1>
+      {exampleState.data.map((example) => <h1>{example.example}</h1>)}
     </div>
   );
 };

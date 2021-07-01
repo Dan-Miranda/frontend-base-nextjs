@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import exampleRedux from './exampleRedux';
-import { ExampleReduxState } from './exampleRedux/types';
+import { ExampleReduxState } from './exampleRedux/actionTypes';
 
 export interface ApplicationState {
   example: ExampleReduxState
