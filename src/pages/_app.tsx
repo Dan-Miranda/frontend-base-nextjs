@@ -1,15 +1,17 @@
 import React from 'react';
-import '../styles/globals.css';
-import type { AppProps } from 'next/app';
-import Theme from '../bootstrap/Theme';
-import '../bootstrap/Theme/globals.scss';
+import { AppProps } from 'next/app';
+import storeWrapper from '../store';
 
-function MyApp(props: AppProps) {
+import '../bootstrap/Theme/globals.scss';
+import Theme from '../bootstrap/Theme';
+
+const MyApp = (props: AppProps) => {
   const { Component, pageProps } = { ...props };
   return (
     <Theme>
       <Component {...pageProps} />
     </Theme>
   );
-}
-export default MyApp;
+};
+
+export default storeWrapper.withRedux(MyApp);
